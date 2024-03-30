@@ -1,0 +1,20 @@
+services:
+  ldap:
+    image: bitnami/openldap:2.6
+    restart: unless-stopped
+    ports:
+      - "1389:1389"
+    volumes:
+      - ./assets/ldifs:/ldifs
+      - ./volumes/openldap:/bitnami/openldap
+    environment:
+      - TZ=Asia/Tokyo
+      - LDAP_PORT_NUMBER=1389
+      - LDAP_ROOT=dc=myserver,o=home
+      - LDAP_ADMIN_USERNAME=admin
+      - LDAP_ADMIN_PASSWORD=admin-pass
+      - LDAP_CONFIG_ADMIN_ENABLED=yes
+      - LDAP_CONFIG_ADMIN_USERNAME=config-admin
+      - LDAP_CONFIG_ADMIN_PASSWORD=config-admin-pass
+      - LDAP_ALLOW_ANON_BINDING=yes
+      - LDAP_CUSTOM_LDIF_DIR=/ldifs
