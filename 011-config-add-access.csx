@@ -32,7 +32,7 @@ var settings = new
         ConfigDn = "olcDatabase={2}mdb,cn=config",
 
         // Access definitions to be added
-        AccessDefineFile = ThisSource.RelativeFile("00-config-add-access-data.txt"),
+        AccessDefineFile = ThisSource.RelativeFile("010-config-access-data.txt"),
     },
 
 };
