@@ -6,6 +6,6 @@ using Lestaly.Cx;
 return await Paved.RunAsync(async () =>
 {
     var composeFile = ThisSource.RelativeFile("compose.yml");
-    await "docker".args("compose", "--file", composeFile.FullName, "down", "--remove-orphans").silent();
-    await "docker".args("compose", "--file", composeFile.FullName, "up", "-d").silent().result().success();
+    await "docker".args("compose", "--file", composeFile.FullName, "down", "--remove-orphans");
+    await "docker".args("compose", "--file", composeFile.FullName, "up", "-d").result().success();
 });
